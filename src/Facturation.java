@@ -44,17 +44,13 @@ public class Facturation
         this.setTVA();
     }
     private void setReduction(){
-        double red;
-        if(this.montantAchat<200.0){red =0.0;}
+        if(this.montantAchat<200.0){this.reduction =0.0;}
         else{
-            red = (this.montantAchat * 15)/100;
+            this.reduction = (this.montantAchat * 15)/100;
         }
-        this.reduction = red;
     }
     private void setTVA(){
-        double TV;
-        TV= (this.montantAchat*20)/100;
-        this.TVA = TV;
+        this.TVA= (this.montantAchat*20)/100;
     }
     public void setMontantTtc() {
         double monTtc;
