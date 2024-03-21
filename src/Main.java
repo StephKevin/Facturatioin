@@ -1,10 +1,25 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Facturation facturation = new Facturation(300.0);
-        System.out.println(facturation.facture());
-        Facturation facturation1 = new Facturation(100.5);
-        System.out.println("\n"+facturation1.facture());
+        char option = 'O';
+        double montant;
+        Scanner sc =new Scanner(System.in);
+        while (option=='O'){
+            System.out.println("Entrez le montant totale : ");
+             montant =sc.nextDouble();
+             sc.nextLine();
+            Facturation facturation = new Facturation(montant);
+            System.out.println(facturation.facture());
+            System.out.println("Voulez vous entrez un nouveau montant(O/N)");
+            String sr = sc.nextLine();
+            option = sr.charAt(0);
+            sc.nextLine();
+        }
+
+
+
     }
 }

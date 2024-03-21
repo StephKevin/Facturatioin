@@ -61,7 +61,7 @@ public class Facturation
     }
     public String facture(){
         return "\t\tFacture numero "+this.nbrInstance+"\nMontant HT: "+this.montantAchat+
-                " Ar\nRéduction: "+this.reduction+" Ar\nTVA: "+this.TVA+" Ar\nTotale: "+this.montantTtc+" Ar";
+                " Ar\nRéduction: "+this.reduction+" Ar\nTVA: "+this.TVA+" Ar\nTotale: "+this.montantTtc+" Ar TTC";
 
     }
 }
