@@ -1,4 +1,4 @@
-public class Facturation
+public class Facturation extends Achat
 {
     private double montantAchat;
     private double montantTtc;

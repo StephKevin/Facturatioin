@@ -13,7 +13,7 @@ public class Main {
              sc.nextLine();
             Facturation facturation = new Facturation(montant);
             System.out.println(facturation.facture());
-            System.out.println("Voulez vous entrez un nouveau montant(O/N)");
+            System.out.println("\nVoulez vous entrez un nouveau montant(O/N)");
             String sr = sc.nextLine();
             option = sr.charAt(0);
             sc.nextLine();
