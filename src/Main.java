@@ -18,8 +18,5 @@ public class Main {
             option = sr.charAt(0);
             sc.nextLine();
         }
-
-
-
     }
 }
