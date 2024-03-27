@@ -34,15 +34,17 @@ public class Achat {
             System.out.println("Articles "+i+" :");
             acquisitions[i] =sc.nextLine();
         }
+        rechercher();
     }
-    public void rechercher() {
+    public double rechercher() {
         double price = 0.0;
         int i = 0;
         int j = 0;
         while (i < this.taille) {
             while (j < 4) {
-                if (this.acquisitions[i] == this.articles[j]) {
-                    price = price + this.prix[j];
+                if (acquisitions[i].equals(articles[j])) {
+                    price += this.prix[j];
+                    break;
                 }
                 else {
                     j++;
@@ -52,5 +54,6 @@ public class Achat {
             i++;
         }
         System.out.println(price);
+        return price;
     }
 }
