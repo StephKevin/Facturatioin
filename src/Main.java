@@ -10,5 +10,6 @@ public class Main {
         nbr = sc.nextInt();
         Achat achat = new Achat(nbr);
         achat.acheter();
+        achat.facture();
     }
 }

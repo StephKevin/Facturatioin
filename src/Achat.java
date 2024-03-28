@@ -5,6 +5,7 @@ public class Achat {
     private double[] prix ={19.0, 50.0, 20.0, 13.0};
     private String[] acquisitions = new java.lang.String[0];
     private static int instanceA;
+    private double price = 0.0;
     private double totale;
     protected int taille;
     private double montantAchat;
@@ -39,45 +40,28 @@ public class Achat {
             acquisitions[i] =sc.nextLine();
         }
         rechercher();
+        setMontantAchat(this.price);
+        //facture();
     }
     public double rechercher() {
-        double price = 0.0;
-        int i = 0;
-        int j = 0;
-        while (i < this.taille) {
-            while (j < 4) {
+        for (int i = 0; i < this.taille; i++) {
+            boolean found = false;
+            for (int j = 0; j < articles.length; j++) {
                 if (acquisitions[i].equals(articles[j])) {
                     price += this.prix[j];
+                    found = true;
                     break;
                 }
-                else {
-                    j++;
-                }
             }
-            j = 0;
-            i++;
+            if (!found) {
+                System.out.println("Article " + acquisitions[i] + " non trouvé.");
+            }
         }
         System.out.println(price);
         return price;
     }
-    public double getMontantAchat() {
-        return montantAchat;
-    }
-
-    public double getMontantTtc() {
-        return montantTtc;
-    }
-
-    public double getReduction() {
-        return reduction;
-    }
-
-    public double getTVA() {
-        return TVA;
-    }
-
-    public void setMontantAchat(double montantAchat) {
-        this.montantAchat = this.totale;
+    public void setMontantAchat( double prixTotale) {
+        this.montantAchat = prixTotale;
         this.setReduction();
         this.setTVA();
     }
